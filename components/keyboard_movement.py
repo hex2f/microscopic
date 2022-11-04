@@ -1,11 +1,9 @@
 from components.transform import Transform
-from entity import Entity
 import pyxel
 import time
 
 class KeyboardMovement:
-  def __init__(self, entity: Entity, speed: float):
-    self.entity = entity
+  def __init__(self, speed: float):
     self.speed = speed
     self.last_frame_time = 0 
 

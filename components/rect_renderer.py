@@ -1,10 +1,8 @@
 import pyxel
 from components.transform import Transform
-from entity import Entity
 
 class RectRenderer:
-  def __init__(self, entity: Entity, color, height, width):
-    self.entity = entity
+  def __init__(self, color, height, width):
     self.color = color
     self.height = height
     self.width = width

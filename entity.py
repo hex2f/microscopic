@@ -3,6 +3,7 @@ class Entity:
     self.components = {}
 
   def add_component(self, component):
+    setattr(component, 'entity', self)
     self.components[component.__class__.__name__] = component
 
   def remove_component(self, component):

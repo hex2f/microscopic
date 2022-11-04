@@ -1,19 +1,16 @@
 import pyxel
-from entities.player import Player
+from scenes.game import GameScene
 
 class App:
   def __init__(self):
     pyxel.init(160, 120, title="microscopic")
-
-    self.entities = [
-      Player(80-8//2, 60-8//2)
-    ]
-
-    for entity in self.entities:
-      entity.start_components()
+    
+    pyxel.image(0).load(0, 0, "spritesheet.png")
+    
+    self.scene = GameScene()
+    self.scene.start()
 
     pyxel.run(self.update, self.draw)
-
 
   def update(self):
     if pyxel.btnp(pyxel.KEY_Q):
@@ -21,10 +18,10 @@ class App:
 
   def draw(self):
     pyxel.cls(0)
-    for entity in self.entities:
-      entity.update_components()
-    for entity in self.entities:
-      entity.draw_components()
+
+    self.scene.update()
+    self.scene.draw()
+    
     # pyxel.text(55, 41, "Hello, snåp!", pyxel.frame_count % 16)
     # pyxel.blt(61, 66, 0, 0, 0, 38, 16)
 
