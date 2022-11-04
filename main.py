@@ -6,7 +6,7 @@ class App:
     pyxel.init(160, 120, title="microscopic")
 
     self.entities = [
-      Player(80, 60)
+      Player(80-8//2, 60-8//2)
     ]
 
     for entity in self.entities:

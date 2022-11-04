@@ -1,10 +1,10 @@
 from entity import Entity
 
 class Transform:
-  def __init__(self, entity: Entity, max_velocity: float = 2.5, drag: float = 0.9):
+  def __init__(self, entity: Entity, x: int = 0, y: int = 0, max_velocity: float = 2.5, drag: float = 0.9):
     self.entity = entity
-    self.x = 0
-    self.y = 0
+    self.x = x
+    self.y = y
     self.x_velocity = 0
     self.y_velocity = 0
     self.max_velocity = max_velocity

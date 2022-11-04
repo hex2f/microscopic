@@ -8,6 +8,6 @@ class Player(Entity):
     super().__init__()
 
     self.add_component(RectRenderer(self, 7, 8, 8))
-    self.add_component(Transform(self))
+    self.add_component(Transform(self, x, y))
     self.add_component(KeyboardMovement(self, 0.1))
   
