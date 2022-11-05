@@ -7,6 +7,8 @@ class Scene:
   def add_entity(self, entity):
     setattr(entity, 'scene', self)
     self.entities.append(entity)
+    if self.frame != 0:
+      entity.start_components()
   
   def remove_entity(self, entity):
     self.entities.remove(entity)
